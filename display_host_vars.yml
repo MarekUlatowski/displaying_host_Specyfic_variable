@@ -1,0 +1,8 @@
+- name: Display Host-Specific Variables
+  hosts: network_devices
+  gather_facts: no
+
+  tasks:
+   - name: Display ansible_host Variable
+     debug:
+      msg: "Host {{ inventory_hostname }} has IP {{ ansible_host }} and is a {{ device_type }}"
